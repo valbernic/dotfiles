@@ -9,6 +9,8 @@ create_symlink() {
   echo "Symlink created: $dst -> $src"
 }
 
+create_symlink "$PWD/.dircolors"
+
 create_symlink "$PWD/git/.gitconfig"
 create_symlink "$PWD/tmux/.tmux.conf"
 create_symlink "$PWD/vim/.vimrc"
