@@ -10,4 +10,5 @@ ln -sf $PWD/bash/.bash_variables $HOME
 source $HOME/.bashrc
 
 ln -sf $PWD/ssh/config $HOME/.ssh
+ln -sf $PWD/ssh/agent.toml $HOME/.config/1Password/ssh
 
