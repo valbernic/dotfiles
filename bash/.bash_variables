@@ -1,3 +1,10 @@
+# ANDROID
+export PLATFORM="$HOME/platform/android"
+export ASDK="$HOME/Android/Sdk"
+# RENAULT
+export RENAULT="$PLATFORM/vendor/renault"
+export OVERLAY="$RENAULT/product/overlay"
+export PREBUILTS="$HOME/Lab/prebuilts/apps/renault"
 # SSH AGENT
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
