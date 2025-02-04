@@ -4,6 +4,12 @@ create_symlink() {
   local src=$1
   local dst=${2:-$HOME}
 
+  dst="${dst%/}"
+
+  if [ -d "$dst" ]; then
+    dst="$dst/$(basename "$src")"
+  fi
+
   ln -sf "$src" "$dst"
   echo "Symlink created: $dst -> $src"
 }
