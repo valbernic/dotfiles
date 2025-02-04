@@ -6,6 +6,10 @@
   rebase = true
 [push]
   default = current
+[core]
+  editor = vim
+  autocrlf = false
+  sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
 [alias]
   co = checkout
   cp = cherry-pick
@@ -17,15 +21,20 @@
   tool = meld
 [difftool]
   prompt = false
-[core]
-  editor = vim
-[credential]
-  helper = store
+[difftool "meld"]
+  path = C:\\Program Files\\Meld\\Meld.exe
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  path = C:\\Program Files\\Meld\\Meld.exe
 [color]
   ui = auto
 [gpg]
   format = ssh
 [gpg "ssh"]
-  program = /opt/1Password/op-ssh-sign
+  program = C:\\Users\\Shadow\\AppData\\Local\\1Password\\app\\8\\op-ssh-sign.exe
 [commit]
   gpgsign = true
+
