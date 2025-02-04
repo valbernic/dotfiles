@@ -4,6 +4,12 @@ create_symlink() {
   local src=$1
   local dst=${2:-$HOME}
 
+  dst="${dst%/}"
+
+  if [ -d "$dst" ]; then
+    dst="$dst/$(basename "$src")"
+  fi
+
   ln -sf "$src" "$dst"
   echo "Symlink created: $dst -> $src"
 }
@@ -22,7 +28,7 @@ set_up_git() {
   # The file must be placed on the Windows host, not within WSL.
   cp -f "$src" "$dst"
 
-  echo "$src has been copied to $dst" 
+  create_symlink "$dst/.gitconfig"
 }
 
 # bash
