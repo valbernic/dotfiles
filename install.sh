@@ -32,8 +32,8 @@ set_up_ssh() {
   set_up_ssh_agent
 }
 
+# bash
 set_up_bash
-
 # git
 create_symlink "$PWD/git/.gitconfig"
 # ssh
@@ -42,4 +42,6 @@ set_up_ssh
 create_symlink "$PWD/tmux/.tmux.conf"
 # vim
 create_symlink "$PWD/vim/.vimrc"
+# vscode
+create_symlink "$PWD/vscode/settings.json" "$HOME/.config/Code/User"
 
