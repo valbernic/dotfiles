@@ -20,5 +20,10 @@ set_up_bash() {
   source "$HOME/.bashrc"
 }
 
+set_up_vim() {
+  create_symlink "$PWD/vim/.vimrc"
+}
+
 set_up_bash
+set_up_vim
 
