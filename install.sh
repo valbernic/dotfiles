@@ -32,6 +32,10 @@ set_up_ssh() {
   create_symlink "$PWD/ssh/config" "$HOME/.ssh"
 }
 
+set_up_git() {
+  create_symlink "$PWD/git/.gitconfig"
+}
+
 set_up_bash
 set_up_vim
 set_up_tmux
