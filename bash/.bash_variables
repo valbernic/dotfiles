@@ -1,0 +1,5 @@
+# NODE
+export NVM_DIR="$HOME/.nvm"
+# PYTHON
+export PYENV_ROOT="$HOME/.pyenv"
+
