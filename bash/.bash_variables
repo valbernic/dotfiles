@@ -3,3 +3,13 @@ export NVM_DIR="$HOME/.nvm"
 # PYTHON
 export PYENV_ROOT="$HOME/.pyenv"
 
+# ANDROID
+export ANDROID_HOME="/home/workspace/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PLATFORM="/home/workspace/platforms/myf5"
+# RENAULT
+export RENAULT="$PLATFORM/vendor/renault"
+export PREBUILTS="$HOME/Lab/prebuilts/apps/renault"
+# SSH AGENT
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+
