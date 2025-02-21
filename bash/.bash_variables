@@ -12,4 +12,6 @@ export RENAULT="$PLATFORM/vendor/renault"
 export PREBUILTS="$HOME/Lab/prebuilts/apps/renault"
 # SSH AGENT
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+# TEXLIVE
+export TEXLIVE="/usr/local/texlive/2024/bin/x86_64-linux"
 

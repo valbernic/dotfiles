@@ -124,6 +124,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# TEXLIVE
+
+if [ -d "$TEXLIVE" ]; then
+    export PATH="$TEXLIVE:$PATH"
+fi
+
 # PYTHON
 
 if [ -d "$PYENV_ROOT/bin" ]; then
