@@ -17,6 +17,7 @@ create_symlink() {
 set_up_bash() {
   create_symlink "$PWD/bash/.bashrc"
   create_symlink "$PWD/bash/.bash_aliases"
+  create_symlink "$PWD/bash/.bash_functions"
   create_symlink "$PWD/bash/.bash_variables"
   source "$HOME/.bashrc"
 }
