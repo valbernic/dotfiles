@@ -2,7 +2,8 @@
 export NVM_DIR="$HOME/.nvm"
 # PYTHON
 export PYENV_ROOT="$HOME/.pyenv"
-
+# SSH AGENT
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 # MISC
 export Z="$HOME/Lab/z"
 
