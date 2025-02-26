@@ -15,3 +15,6 @@ export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 # TEXLIVE
 export TEXLIVE="/usr/local/texlive/2024/bin/x86_64-linux"
 
+# MISC
+export Z="$HOME/Lab/z"
+
