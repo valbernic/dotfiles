@@ -38,9 +38,14 @@ set_up_git() {
   create_symlink "$PWD/git/.gitconfig"
 }
 
+set_up_vscode() {
+  create_symlink "$PWD/vscode/settings.json" "$HOME/.config/Code/User"
+}
+
 set_up_bash
 set_up_vim
 set_up_tmux
 set_up_ssh
 set_up_git
+set_up_vscode
 
