@@ -101,20 +101,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[[ -f ~/.bash_aliases ]] && \. ~/.bash_aliases
 
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
+[[ -f ~/.bash_functions ]] && \. ~/.bash_functions
 
-if [ -f ~/.bash_variables ]; then
-    . ~/.bash_variables
-fi
+[[ -f ~/.bash_variables ]] && \. ~/.bash_variables
 
 # <https://github.com/rupa/z>
-[ -d "$Z" ] && \. "$Z/z.sh"
+[[ -d "$Z" ]] && \. "$Z/z.sh"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -129,23 +123,24 @@ fi
 
 # TEXLIVE
 
-if [ -d "$TEXLIVE" ]; then
-    export PATH="$TEXLIVE:$PATH"
-fi
+[[ -d "$TEXLIVE" ]] && export PATH="$TEXLIVE:$PATH"
 
 # PYTHON
 
-if [ -d "$PYENV_ROOT/bin" ]; then
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+if [[ -d "$PYENV_ROOT/bin" ]]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # NODE
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]; then
+  source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  export JAVA_HOME="$(readlink -f $(command -v java))"
+fi
+

@@ -1,10 +1,9 @@
-# JAVA
-export JAVA_HOME="$(readlink -f $(which java))"
 # NODE
 export NVM_DIR="$HOME/.nvm"
 # PYTHON
 export PYENV_ROOT="$HOME/.pyenv"
-
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
 # ANDROID
 export ANDROID_HOME="/home/workspace/Sdk"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
