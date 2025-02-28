@@ -1,3 +1,5 @@
+# JAVA
+export JAVA_HOME="$(readlink -f $(which java))"
 # NODE
 export NVM_DIR="$HOME/.nvm"
 # PYTHON
