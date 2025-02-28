@@ -42,4 +42,5 @@ set_up_bash
 set_up_vim
 set_up_tmux
 set_up_ssh
+set_up_git
 
