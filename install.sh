@@ -16,8 +16,6 @@ create_symlink() {
 
 set_up_bash() {
   create_symlink "$PWD/bash/.bashrc"
-  create_symlink "$PWD/bash/.bash_aliases"
-  create_symlink "$PWD/bash/.bash_functions"
   create_symlink "$PWD/bash/.bash_variables"
   source "$HOME/.bashrc"
 }
@@ -35,11 +33,18 @@ set_up_ssh() {
 }
 
 set_up_git() {
-  create_symlink "$PWD/git/.gitconfig"
+  local src="$PWD/git/.gitconfig"
+  local dst="/mnt/c/Users/Shadow"
+      
+  # Git on Windows won't be able to access '.gitconfig' located in WSL.
+  # The file must be placed on the Windows host, not within WSL.
+  cp -f "$src" "$dst"
+
+  create_symlink "$dst/.gitconfig"
 }
 
 set_up_vscode() {
-  create_symlink "$PWD/vscode/settings.json" "$HOME/.config/Code/User"
+  create_symlink "$PWD/vscode/settings.json" "/mnt/c/Users/Shadow/AppData/Roaming/Code/User"
 }
 
 set_up_bash
