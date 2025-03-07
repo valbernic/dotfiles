@@ -121,26 +121,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# TEXLIVE
-
-[[ -d "$TEXLIVE" ]] && export PATH="$TEXLIVE:$PATH"
-
-# PYTHON
-
-if [[ -d "$PYENV_ROOT/bin" ]]; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-# NODE
-
-[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]; then
-  source "$SDKMAN_DIR/bin/sdkman-init.sh"
-  export JAVA_HOME="$(readlink -f $(command -v java))"
-fi
+[[ -s "$HOME/.envsetup.sh" ]] && \. "$HOME/.envsetup.sh"
 
