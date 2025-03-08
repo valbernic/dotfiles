@@ -48,3 +48,6 @@ set_up_ssh
 set_up_git
 set_up_vscode
 
+# misc
+create_symlink "$PWD/misc/.dircolors"
+
