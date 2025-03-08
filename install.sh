@@ -3,20 +3,14 @@
 create_symlink() {
   local src=$1
   local dst=${2:-$HOME}
-
-  dst="${dst%/}"
-
-  if [ -d "$dst" ]; then
-    dst="$dst/$(basename "$src")"
-  fi
-
-  ln -sf "$src" "$dst"
-  echo "Symlink created: $dst -> $src"
+  
+  ln -sfv "$src" "$dst"
 }
 
 set_up_bash() {
   create_symlink "$PWD/bash/.bashrc"
   create_symlink "$PWD/bash/.bash_variables"
+  create_symlink "$PWD/bash/.envsetup.sh"
   source "$HOME/.bashrc"
 }
 
@@ -29,7 +23,7 @@ set_up_tmux() {
 }
 
 set_up_ssh() {
-  create_symlink "$PWD/ssh/config" "$HOME/.ssh"
+  create_symlink "$PWD/ssh/config" "$HOME/.ssh/config"
 }
 
 set_up_git() {
@@ -44,7 +38,7 @@ set_up_git() {
 }
 
 set_up_vscode() {
-  create_symlink "$PWD/vscode/settings.json" "/mnt/c/Users/Shadow/AppData/Roaming/Code/User"
+  create_symlink "$PWD/vscode/settings.json" "/mnt/c/Users/Shadow/AppData/Roaming/Code/User/settings.json"
 }
 
 set_up_bash
