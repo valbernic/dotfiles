@@ -4,19 +4,13 @@ create_symlink() {
   local src=$1
   local dst=${2:-$HOME}
 
-  dst="${dst%/}"
-
-  if [ -d "$dst" ]; then
-    dst="$dst/$(basename "$src")"
-  fi
-
-  ln -sf "$src" "$dst"
-  echo "Symlink created: $dst -> $src"
+  ln -sfv "$src" "$dst"
 }
 
 set_up_bash() {
   create_symlink "$PWD/bash/.bashrc"
   create_symlink "$PWD/bash/.bash_variables"
+  create_symlink "$PWD/bash/.envsetup.sh"
   source "$HOME/.bashrc"
 }
 
