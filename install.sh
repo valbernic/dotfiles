@@ -35,7 +35,8 @@ set_up_git() {
 }
 
 set_up_vscode() {
-  create_symlink "$PWD/vscode/settings.json" "$HOME/.config/Code/User"
+  local dst="$HOME/.config/Code/User"
+  [[ -d "$dst" ]] && create_symlink "$PWD/vscode/settings.json" "$dst"
 }
 
 set_up_bash
