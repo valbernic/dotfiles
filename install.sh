@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+
 create_symlink() {
   local src=$1
   local dst=${2:-$HOME}
