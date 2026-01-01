@@ -56,6 +56,16 @@ set_up_vim() {
   create_symlink "$PWD/vim/functions.vim" "$HOME/.vim"
 }
 
+## vscode ##
+
+set_up_vscode() {
+  print_tool "vscode"
+  local dst="$HOME/.config/Code/User"
+  if [[ -d "$dst" ]]; then
+    create_symlink "$PWD/vscode/settings.json" "$dst"
+  fi
+}
+
 ## utils ##
 
 create_symlink() {
@@ -78,6 +88,7 @@ main() {
   set_up_ssh
   set_up_tmux
   set_up_vim
+  set_up_vscode
 }
 
 main
