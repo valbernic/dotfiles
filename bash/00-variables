@@ -1,0 +1,26 @@
+
+## misc ##
+
+export Z="$HOME/Lab/z"
+
+## node ##
+
+export NVM_DIR="$HOME/.nvm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+
+## python ##
+
+export PYENV_ROOT="$HOME/.pyenv"
+
+## sdk ##
+
+export SDKMAN_DIR="$HOME/.sdkman"
+
+## ssh ##
+
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+
+## texlive ##
+
+export TEXLIVE="/usr/local/texlive/2025/bin/x86_64-linux"
+

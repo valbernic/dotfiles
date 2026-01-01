@@ -2,6 +2,20 @@
 
 cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
+## bash ##
+
+set_up_bash() {
+  print_tool "bash"
+  local dst="$HOME/.bashrc.d"
+  mkdir -p "$dst"
+  create_symlink "$PWD/bash/.bashrc"
+  create_symlink "$PWD/bash/00-variables" "$dst"
+  create_symlink "$PWD/bash/01-aliases" "$dst"
+  create_symlink "$PWD/bash/functions" "$dst"
+  create_symlink "$PWD/bash/.path.sh"
+  source "$HOME/.bashrc"
+}
+
 ## git ##
 
 set_up_git() {
@@ -59,6 +73,7 @@ print_tool() {
 ## main ##
 
 main() {
+  set_up_bash
   set_up_git
   set_up_ssh
   set_up_tmux

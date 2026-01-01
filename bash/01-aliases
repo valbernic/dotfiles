@@ -1,0 +1,24 @@
+
+## android ##
+
+# dev settings
+alias dev-mode="adb shell settings put global development_settings_enabled 1"
+# disable avb
+alias no-verity="adb shell avbctl disable-verification && adb disable-verity"
+# emulator
+alias emu-9="emulator -writable-system -skin 1250x834 -selinux permissive &"
+alias emu-101="emulator -writable-system -skin 1280x720 -selinux permissive &"
+alias emu-104="emulator -writable-system -skin 960x1280 -selinux permissive &"
+alias emu-12="emulator -writable-system -skin 1250x1562 -selinux permissive &"
+alias emu-port="emu-104"
+alias emu-land="emu-101"
+
+## bashrc ##
+
+alias vars="vi ~/.bashrc.d/00-variables"
+alias aliases="vi ~/.bashrc.d/01-aliases"
+
+## system ##
+
+# wifi status
+alias wifi="nmcli radio wifi"
