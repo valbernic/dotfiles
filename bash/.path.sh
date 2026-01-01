@@ -49,6 +49,13 @@ case ":$PATH:" in
   *) export PATH="$TEXLIVE:$PATH" ;;
 esac
 
+## utils ##
+
+case ":$PATH:" in
+  *":$RSWL/tools/scripts:"*) ;;
+  *) export PATH="$RSWL/tools/scripts:$PATH" ;;
+esac
+
 ## z ##
 
 [[ -d "$Z" ]] && \. "$Z/z.sh"
