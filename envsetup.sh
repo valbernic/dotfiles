@@ -23,6 +23,30 @@ set_up_git() {
   create_symlink "$PWD/git/.gitconfig"
 }
 
+## gnome ##
+
+set_up_gnome() {
+  print_tool "gnome"
+  if command -v gnome-terminal >/dev/null 2>&1; then
+    set_up_gnome_terminal
+  fi
+}
+
+set_up_gnome_terminal() {
+  dconf load "/org/gnome/terminal/" < "$PWD/gnome/terminal.dconf"
+  if [[ $? -eq 0 ]]; then
+    echo "    - $(print_bf gnome-terminal) updated"
+  fi
+}
+
+set_up_desktop_env() {
+  case "$XDG_CURRENT_DESKTOP" in
+    *GNOME*)
+      set_up_gnome
+      ;;
+  esac
+}
+
 ## ssh ##
 
 set_up_ssh() {
@@ -84,6 +108,7 @@ print_tool() {
 
 main() {
   set_up_bash
+  set_up_desktop_env
   set_up_git
   set_up_ssh
   set_up_tmux
