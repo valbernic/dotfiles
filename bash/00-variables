@@ -1,6 +1,7 @@
 
 ## misc ##
 
+export RSWL="/home/workspace/rswl"
 export Z="$HOME/Lab/z"
 
 ## node ##
@@ -15,6 +16,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 ## sdk ##
 
 export SDKMAN_DIR="$HOME/.sdkman"
+export ANDROID_HOME="$RSWL/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
 
 ## ssh ##
 
@@ -23,4 +26,3 @@ export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 ## texlive ##
 
 export TEXLIVE="/usr/local/texlive/2025/bin/x86_64-linux"
-
