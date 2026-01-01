@@ -1,0 +1,32 @@
+[user]
+  name = Valentin Lafage
+  email = vlafage.dev@free.fr
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINYikptqnqpfxzYxkeTBJGDS2u3S+NFECqGOUr4psu3Y
+[pull]
+  rebase = true
+[push]
+  default = current
+[alias]
+  amd = commit --amend --no-edit
+  br = branch
+  cm = commit -s
+  co = checkout
+  cp = cherry-pick
+  gr = log --oneline --graph
+  ko = reset --hard HEAD
+  ls = log --oneline -5
+  st = status
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[core]
+  editor = vim
+[color]
+  ui = auto
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /opt/1Password/op-ssh-sign
+[commit]
+  gpgsign = true
